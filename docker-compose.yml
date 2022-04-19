@@ -1,0 +1,28 @@
+version: '3'
+services:
+  db:
+    image: mcr.microsoft.com/mssql/server:2019-CU15-ubuntu-20.04
+    user: root
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=Bqg3w532rg!
+    volumes:
+      - ./mssqldata:/var/opt/mssql/data
+    ports:
+      - 1433:1433
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+    links:
+      - db
+
+  application:
+    build: .
+    ports:
+      - "5000:80"
+    depends_on:
+      - db
+

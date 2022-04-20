@@ -11,4 +11,6 @@ internal class ApplicationDbContext : DbContext
     public DbSet<Employer> Employers => Set<Employer>();
     
     public DbSet<Applicant> Applicants => Set<Applicant>();
+
+    public DbSet<KindOfActivity> KindOfActivities => Set<KindOfActivity>();
 }

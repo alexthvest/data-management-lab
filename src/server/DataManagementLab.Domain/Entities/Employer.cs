@@ -12,4 +12,6 @@ public class Employer : Entity
     
     [Column(TypeName = "nvarchar(15)")]
     public string? Phone { get; set; }
+    
+    public int KindOfActivityId { get; set; }
 }

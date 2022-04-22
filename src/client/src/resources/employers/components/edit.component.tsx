@@ -3,11 +3,11 @@ import { AutocompleteInput, Edit, EditProps, RaRecord, ReferenceInput, SimpleFor
 export const EmployerEdit = (props: EditProps<RaRecord>) => (
   <Edit {...props}>
     <SimpleForm>
-      <TextInput source="name" validate={required()} />
-      <TextInput source="address" validate={required()} />
-      <TextInput source="phone" validate={required()} />
-      <ReferenceInput label="Kind of Activity" source="kindOfActivityId" reference="kindofactivities" validate={required()}>
-        <AutocompleteInput optionText="title" />
+      <TextInput source="name" variant="outlined" validate={[required()]} />
+      <TextInput source="address" variant="outlined" validate={[required()]} />
+      <TextInput source="phone" variant="outlined" validate={[required()]} />
+      <ReferenceInput label="Kind of Activity" source="kindOfActivityId" reference="kindofactivities">
+        <AutocompleteInput optionText="title" variant="outlined" validate={[required()]} />
       </ReferenceInput>
     </SimpleForm>
   </Edit>

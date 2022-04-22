@@ -1,13 +1,13 @@
-import { Create, CreateProps, RaRecord, ReferenceInput, SelectInput, SimpleForm, TextInput } from "react-admin";
+import { AutocompleteInput, Create, CreateProps, RaRecord, ReferenceInput, required, SimpleForm, TextInput } from "react-admin";
 
 export const EmployerCreate = (props: CreateProps<RaRecord>) => (
   <Create {...props}>
     <SimpleForm>
-      <TextInput source="name" />
-      <TextInput source="address" />
-      <TextInput source="phone" />
+      <TextInput source="name" variant="outlined" validate={[required()]} />
+      <TextInput source="address" variant="outlined" validate={[required()]} />
+      <TextInput source="phone" variant="outlined" validate={[required()]} />
       <ReferenceInput label="Kind of Activity" source="kindOfActivityId" reference="kindofactivities">
-        <SelectInput optionText="title" />
+        <AutocompleteInput optionText="title" variant="outlined" validate={[required()]} />
       </ReferenceInput>
     </SimpleForm>
   </Create>

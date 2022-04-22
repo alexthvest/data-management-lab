@@ -1,12 +1,10 @@
-import { Datagrid, DeleteButton, EditButton, List, TextField } from "react-admin";
+import { Datagrid, DeleteButton, EditButton, FunctionField, List, TextField, WrapperField } from "react-admin";
 
 export const ApplicantList = () => (
   <List>
     <Datagrid>
-      <TextField source="firstName" />
-      <TextField source="lastName" />
-      <TextField source="surname" />
-      <TextField source="otherData" />
+      <FunctionField label="Full Name" sortBy="author.first_name" 
+        render={(r => `${r.lastName} ${r.firstName} ${r.surname}`)} />
       <EditButton />
       <DeleteButton />
     </Datagrid>

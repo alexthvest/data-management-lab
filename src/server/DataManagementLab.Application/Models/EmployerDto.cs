@@ -1,12 +1,19 @@
-namespace DataManagementLab.Domain.Entities;
+using System.ComponentModel.DataAnnotations;
 
-public class Employer : Entity
+namespace DataManagementLab.Application.Models;
+
+public class EmployerDto
 {
+    [Required]
     public string Name { get; set; } = default!;
 
+    [Required]
     public string Address { get; set; } = default!;
 
+    [Required]
+    [MaxLength(15)]
     public string Phone { get; set; } = default!;
     
+    [Required]
     public int KindOfActivityId { get; set; }
 }

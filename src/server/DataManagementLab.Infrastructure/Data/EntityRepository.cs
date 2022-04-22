@@ -44,6 +44,12 @@ internal class EntityRepository<TEntity> : IEntityRepository<TEntity>
         return entity;
     }
 
+    public async Task DeleteAsync(TEntity entity, CancellationToken cancellationToken = default)
+    {
+        _dbContext.Remove(entity);
+        await _dbContext.SaveChangesAsync(cancellationToken);
+    }
+
     public Task<int> CountAsync(CancellationToken cancellationToken = default)
     {
         return _dbContext.Set<TEntity>().CountAsync(cancellationToken);

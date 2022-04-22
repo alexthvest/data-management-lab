@@ -9,8 +9,8 @@ namespace DataManagementLab.Web.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
-public class ApplicantsController : CrudControllerBase<Applicant, ApplicantDto>
+public class AppointmentsController : CrudControllerBase<Appointment, AppointmentDto>
 {
-    public ApplicantsController(IMapper mapper, IEntityRepository<Applicant> entityRepository) 
+    public AppointmentsController(IMapper mapper, IEntityRepository<Appointment> entityRepository) 
         : base(mapper, entityRepository) {}
 }

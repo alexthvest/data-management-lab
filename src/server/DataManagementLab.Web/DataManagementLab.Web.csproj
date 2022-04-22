@@ -15,6 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\DataManagementLab.Application\DataManagementLab.Application.csproj" />
     <ProjectReference Include="..\DataManagementLab.Domain\DataManagementLab.Domain.csproj" />
     <ProjectReference Include="..\DataManagementLab.Infrastructure\DataManagementLab.Infrastructure.csproj" />
   </ItemGroup>

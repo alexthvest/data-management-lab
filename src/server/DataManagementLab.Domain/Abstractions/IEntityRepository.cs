@@ -16,5 +16,7 @@ public interface IEntityRepository<TEntity>
 
     Task<TEntity> UpdateAsync(TEntity entity, CancellationToken cancellationToken = default);
 
+    Task DeleteAsync(TEntity entity, CancellationToken cancellationToken = default);
+    
     Task<int> CountAsync(CancellationToken cancellationToken = default);
 }

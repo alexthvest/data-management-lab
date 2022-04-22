@@ -1,9 +1,13 @@
-namespace DataManagementLab.Domain.Entities;
+using System.ComponentModel.DataAnnotations;
 
-public class Applicant : Entity
+namespace DataManagementLab.Application.Models;
+
+public class ApplicantDto
 {
+    [Required]
     public string FirstName { get; set; } = default!;
     
+    [Required]
     public string LastName { get; set; } = default!;
     
     public string? Surname { get; set; }

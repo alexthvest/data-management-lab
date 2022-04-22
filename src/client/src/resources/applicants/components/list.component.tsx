@@ -1,4 +1,4 @@
-import { Datagrid, List, TextField } from "react-admin";
+import { Datagrid, DeleteButton, EditButton, List, TextField } from "react-admin";
 
 export const ApplicantList = () => (
   <List>
@@ -7,6 +7,8 @@ export const ApplicantList = () => (
       <TextField source="lastName" />
       <TextField source="surname" />
       <TextField source="otherData" />
+      <EditButton />
+      <DeleteButton />
     </Datagrid>
   </List>
 );

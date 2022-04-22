@@ -1,4 +1,4 @@
-import { Datagrid, List, ReferenceField, TextField } from "react-admin";
+import { Datagrid, DeleteButton, EditButton, List, ReferenceField, TextField } from "react-admin";
 
 export const EmployerList = () => (
   <List>
@@ -9,6 +9,8 @@ export const EmployerList = () => (
       <ReferenceField label="Kind of Activity" source="kindOfActivityId" reference="kindofactivities">
         <TextField source="title" />
       </ReferenceField>
+      <EditButton />
+      <DeleteButton />
     </Datagrid>
   </List>
 );

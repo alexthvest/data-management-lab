@@ -1,4 +1,3 @@
-using System.Diagnostics.Contracts;
 using System.Text.RegularExpressions;
 using AutoMapper;
 using DataManagementLab.Domain.Abstractions;
@@ -37,6 +36,8 @@ public abstract class CrudControllerBase<TEntity, TObject> : ControllerBase
         var totalCount = await _entityRepository.CountAsync(cancellationToken);
         HttpContext.Response.Headers["Content-Range"] = totalCount.ToString();
 
+        entities = entities.OrderByDescending(x => x.Id);
+
         return Ok(entities);
     }
 
@@ -48,7 +49,7 @@ public abstract class CrudControllerBase<TEntity, TObject> : ControllerBase
     }
     
     [HttpPost]
-    public async Task<ActionResult<TEntity>> CreateEntity([FromBody] TObject @object, CancellationToken cancellationToken)
+    public virtual async Task<ActionResult<TEntity>> CreateEntity([FromBody] TObject @object, CancellationToken cancellationToken)
     {
         var entity = new TEntity();
 
@@ -69,7 +70,7 @@ public abstract class CrudControllerBase<TEntity, TObject> : ControllerBase
 
         _mapper.Map(@object, entity);
         await _entityRepository.UpdateAsync(entity, cancellationToken);
-        
+
         return entity;
     }
 

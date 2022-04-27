@@ -3,7 +3,7 @@ using DataManagementLab.Domain.Abstractions;
 using DataManagementLab.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace DataManagementLab.Infrastructure.Data;
+namespace DataManagementLab.Infrastructure.Data.Repositories;
 
 internal class EntityRepository<TEntity> : IEntityRepository<TEntity>
     where TEntity : Entity
@@ -15,7 +15,7 @@ internal class EntityRepository<TEntity> : IEntityRepository<TEntity>
         _dbContext = dbContext;
     }
 
-    public async Task<TEntity> AddAsync(TEntity entity, CancellationToken cancellationToken = default)
+    public virtual async Task<TEntity> AddAsync(TEntity entity, CancellationToken cancellationToken = default)
     {
         await _dbContext.AddAsync(entity, cancellationToken);
         await _dbContext.SaveChangesAsync(cancellationToken);

@@ -14,6 +14,7 @@ public class EmployerDto
     [MaxLength(15)]
     public string Phone { get; set; } = default!;
     
-    [Required]
     public int KindOfActivityId { get; set; }
+    
+    public string? KindOfActivity { get; set; }
 }

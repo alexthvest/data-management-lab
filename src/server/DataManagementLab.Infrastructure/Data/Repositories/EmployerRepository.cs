@@ -27,14 +27,14 @@ internal class EmployerRepository : EntityRepository<Employer>, IEmployerReposit
         {
             Direction = ParameterDirection.Output
         };
-        
+
         await _dbContext.Database.ExecuteSqlRawAsync(
             "EXEC InsertEmployer @Name, @Address, @Phone, @KindOfActivity, @Id OUT, @KindOfActivityId OUT",
             new SqlParameter("@Name", name),
             new SqlParameter("@Address", address),
             new SqlParameter("@Phone", phone),
             new SqlParameter("@KindOfActivity", kindOfActivity),
-            employerId, 
+            employerId,
             kindOfActivityId
         );
 

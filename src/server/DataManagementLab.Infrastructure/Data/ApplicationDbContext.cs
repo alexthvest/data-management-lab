@@ -16,6 +16,8 @@ internal class ApplicationDbContext : DbContext
     
     public DbSet<Appointment> Appointments => Set<Appointment>();
 
+    public DbSet<Vacancy> Vacancies => Set<Vacancy>();
+
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);
@@ -31,5 +33,8 @@ internal class ApplicationDbContext : DbContext
         
         modelBuilder.Entity<Appointment>()
             .ToTable("Appointment");
+
+        modelBuilder.Entity<Vacancy>()
+            .ToTable("Vacancy");
     }
 }

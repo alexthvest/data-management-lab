@@ -12,7 +12,7 @@ export const EmployerForm = () => {
 
       <input type="checkbox" checked={koaEditable} onChange={e => setKoaEditable(e.target.checked)} />
 
-      {koaEditable && 
+      {koaEditable &&
         <ReferenceInput label="Kind of Activity" source="kindOfActivityId" reference="kindofactivities" >
           <AutocompleteInput optionText="title" variant="outlined" defaultValue={0} validate={[required()]} />
         </ReferenceInput>

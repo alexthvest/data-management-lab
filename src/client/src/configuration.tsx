@@ -6,7 +6,7 @@ import { applicantResource } from "./resources/applicants";
 import { employerResource } from "./resources/employers";
 import { kindOfActivityResource } from "./resources/kind-of-activities";
 import { appointmentResource } from "./resources/appointments";
-
+import { vacancyResource } from "./resources/vacancies";
 
 export const configuration: AdminConfiguration = {
   dataProvider: restProvider("api"),
@@ -15,5 +15,6 @@ export const configuration: AdminConfiguration = {
     applicantResource,
     kindOfActivityResource,
     appointmentResource,
+    vacancyResource,
   ]
 };

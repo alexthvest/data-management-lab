@@ -1,5 +1,5 @@
 import { Create, Edit } from 'react-admin';
-import InterestsOutlinedIcon from '@mui/icons-material/InterestsOutlined';
+import WorkOutlineIcon from '@mui/icons-material/WorkOutline';
 
 import { ResourceItem } from "../../common/models";
 
@@ -7,7 +7,7 @@ import { VacancyList } from "./components/list.component";
 import { VacancyForm } from './components/form.component';
 
 export const vacancyResource: ResourceItem = {
-  icon: InterestsOutlinedIcon,
+  icon: WorkOutlineIcon,
   name: "vacancies",
   components: {
     list: VacancyList,

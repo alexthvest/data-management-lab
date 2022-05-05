@@ -1,4 +1,4 @@
-import { Datagrid, DeleteButton, EditButton, List, TextField, ReferenceField, BooleanField } from "react-admin";
+import { Datagrid, DeleteButton, EditButton, List, TextField, NumberField, ReferenceField, BooleanField } from "react-admin";
 
 export const VacancyList = () => (
   <List>
@@ -9,7 +9,7 @@ export const VacancyList = () => (
        <ReferenceField label="Appointment" source="appointmentId" reference="appointments">
         <TextField source="title" />
       </ReferenceField>
-      <TextField source="salary" />
+      <NumberField source="salary" />
       <BooleanField source="isOpen" />
       <EditButton />
       <DeleteButton />

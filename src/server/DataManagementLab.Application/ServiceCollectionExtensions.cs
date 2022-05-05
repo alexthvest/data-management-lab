@@ -15,6 +15,8 @@ public static class ServiceCollectionExtensions
             c.CreateMap<KindOfActivityDto, KindOfActivity>();
             c.CreateMap<AppointmentDto, Appointment>();
             c.CreateMap<VacancyDto, Vacancy>();
+            c.CreateMap<DealDto, Deal>();
+            c.CreateMap<ApplicantAppointmentDto, ApplicantAppointment>();
         });
     }
 }
